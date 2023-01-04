@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    collection do
+      get 'login'
+      post 'do_login'
+      get 'logout'
+    end
+  end
   #resources :comments
   resources :blogs do
     resources :comments

@@ -57,6 +57,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+  end
+
+  def do_login
+    user = User.where(username: params[:username], password: params[:password]).first
+    if user
+      session[:current_userid] = user.id
+      redirect_to blogs_url, notice: 'User login successfully.'
+    else
+      redirect_to login_users_url, notice: 'Wrong username or password!'
+    end
+  end
+
+  def logout
+    session.delete(:current_userid)
+    redirect_to login_users_url,  notice: 'User logout successfully!'
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
