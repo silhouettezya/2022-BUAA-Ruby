@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       @products = @products.where(category_id: params[:category_id])
     end
 
-    render file: 'welcome/index'
+    render 'welcome/index'
   end
 
 end
