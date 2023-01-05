@@ -1,3 +1,3 @@
-class Blog < ApplicationRecord::Base
+class Blog < ApplicationRecord
 validates :title, :content,  presence: true
 end
