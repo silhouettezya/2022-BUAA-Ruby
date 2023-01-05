@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users
+  #resources :users
   resources :sessions
   delete '/logout' => 'sessions#destroy', as: :logout
 end
