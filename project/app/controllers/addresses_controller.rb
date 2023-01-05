@@ -18,12 +18,12 @@ class AddressesController < ApplicationController
       @addresses = current_user.reload.addresses
       render json: {
         status: 'ok',
-        data: render_to_string(file: 'addresses/index')
+        data: render_to_string(file: 'addresses/index.html')
       }
     else
       render json: {
         status: 'error',
-        data: render_to_string(file: 'addresses/new')
+        data: render_to_string(file: 'addresses/new.html')
       }
     end
   end
@@ -80,4 +80,3 @@ class AddressesController < ApplicationController
   end
 
 end
-
