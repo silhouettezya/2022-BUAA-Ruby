@@ -15,7 +15,7 @@ class Order < ApplicationRecord
 
   def self.create_order_from_shopping_carts! user, address, *shopping_carts
     shopping_carts.flatten!
-    address_attrs = address.attributes.except!("id", "created_at", "updated_at")
+    address_attrs = address.attributes.except!("created_at", "updated_at")
 
     transaction do
       order_address = user.addresses.create!(address_attrs.merge(
