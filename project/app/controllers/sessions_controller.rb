@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       update_browser_uuid user.uuid
       flash[:notice] = "登陆成功"
       if user.is_admin then
-        redirect_to root_path/admin
+        redirect_to admin_path
       else
         redirect_to root_path
       end
