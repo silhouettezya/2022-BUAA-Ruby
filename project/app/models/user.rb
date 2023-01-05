@@ -18,6 +18,10 @@ class User < ApplicationRecord
   validates_length_of :password, message: "密码最短为6位", minimum: 6,
                       if: :need_validate_password
 
+  def username
+    self.email.split('@').first
+  end
+
   private
   def need_validate_password
     self.new_record? ||
