@@ -65,4 +65,3 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
 end
-
