@@ -20,6 +20,8 @@ class Product < ApplicationRecord
 
   before_create :set_default_attrs
 
+  scope :onshelf, -> { where(status: Status::On) }
+
   module Status
     On = 'on'
     Off = 'off'

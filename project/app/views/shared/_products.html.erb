@@ -1,0 +1,16 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="caption">
+        <%= link_to "抱歉暂无图片！", product_path(product) %>
+        <div class="caption">
+          <h4><%= link_to product.title, product_path(product), class: 'title' %></h4>
+          <p><strong>¥<%= product.price %></strong> <span class="msrp">¥<%= product.msrp %></span></p>
+          <p><a href="#" class="btn btn-danger btn-sm" role="button">加入购物车</a></p>
+        </div>
+      </div>
+    </div>
+  <% end -%>
+</div>
+
+<%= will_paginate @products %>
